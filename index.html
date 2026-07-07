@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanket Gaikwad | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HERO SECTION ================= -->
+
+<header>
+    <div class="hero-content">
+
+    <img src="me3.png" alt="Sanket Gaikwad" class="profile-img">
+
+    <h1 id="typing"></h1>
+
+    <p>Diploma IT Student | AI Enthusiast | Web Developer</p>
+
+    <div class="hero-buttons">
+
+        <a href="#certificate" class="btn">
+            📜 View My Certificate
+        </a>
+
+        <a href="resume.docx" download class="btn">
+            📄 Download Resume
+        </a>
+
+    </div>
+
+</div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <p>
+        I am a Diploma Information Technology student passionate about
+        Artificial Intelligence, Machine Learning and Web Development.
+        I enjoy creating innovative websites and AI-based projects while
+        continuously learning new technologies to improve my skills.
+    </p>
+
+</section>
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>HTML & CSS</h3>
+            <p>
+                Responsive, modern and attractive websites.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>JavaScript</h3>
+            <p>
+                Interactive and dynamic web applications.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Python</h3>
+            <p>
+                Programming, automation and AI applications.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Artificial Intelligence</h3>
+            <p>
+                Machine Learning and AI-based projects.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="card-container">
+
+       
+
+        <div class="card">
+            <h3>Portfolio Website</h3>
+
+            <p>
+                Responsive personal portfolio using HTML, CSS and JavaScript.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Import Export Website</h3>
+
+            <p>
+                Professional import-export website with login,
+                signup and backend integration.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Hostel Management System</h3>
+
+            <p>
+                Hostel management project using HTML, CSS,
+                JavaScript and PHP.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CERTIFICATE ================= -->
+
+<section id="certificate">
+
+    <h2>My Certificate</h2>
+
+    <div class="certificate-box">
+
+        <h3>C++ Programming Certificate</h3>
+
+        <p>
+            Click the button below to view my certificate.
+        </p>
+
+        <a href="cpp-certificate.pdf"
+           target="_blank"
+           class="btn">
+
+            Open Certificate
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <h2>Contact Me</h2>
+
+    <div class="contact-box">
+
+        <p>📧 Email : sanketgaikwad4533@gmail.com</p>
+
+        <p>📱 Mobile : +91 7447745738</p>
+
+        <p>💻 GitHub : github.com/SanketGaikwad</p>
+
+        <p>📍 Maharashtra, India</p>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Sanket Gaikwad | All Rights Reserved
+    </p>
+
+</footer>
+
+<!-- ================= TYPEWRITER SCRIPT ================= -->
+
+<script>
+
+const text = "Hi, I'm Sanket Gaikwad";
+const typing = document.getElementById("typing");
+
+let i = 0;
+
+function typeWriter(){
+
+    if(i < text.length){
+
+        typing.innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typeWriter,120);
+
+    }else{
+
+        typing.classList.add("blink");
+
+    }
+
+}
+
+typeWriter();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,979 @@
+/* =========================================
+   GOOGLE FONT
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#081b29;
+    color:#fff;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* =========================================
+   ANIMATED BACKGROUND
+========================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:-250px;
+    left:-250px;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:rgba(0,171,240,.12);
+    filter:blur(120px);
+    animation:moveBlob1 12s infinite alternate;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    bottom:-250px;
+    right:-250px;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:rgba(0,255,180,.08);
+    filter:blur(120px);
+    animation:moveBlob2 15s infinite alternate;
+    z-index:-2;
+}
+
+@keyframes moveBlob1{
+
+    0%{
+        transform:translate(0,0);
+    }
+
+    100%{
+        transform:translate(150px,100px);
+    }
+
+}
+
+@keyframes moveBlob2{
+
+    0%{
+        transform:translate(0,0);
+    }
+
+    100%{
+        transform:translate(-120px,-100px);
+    }
+
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Floating Circles */
+
+header::before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:#00abf0;
+    opacity:.12;
+    border-radius:50%;
+    top:8%;
+    left:10%;
+    animation:floatCircle 8s ease-in-out infinite;
+}
+
+header::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:#00ffcc;
+    opacity:.08;
+    border-radius:50%;
+    bottom:10%;
+    right:10%;
+    animation:floatCircle2 10s ease-in-out infinite;
+}
+
+@keyframes floatCircle{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-35px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes floatCircle2{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(40px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content{
+
+    max-width:900px;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+    animation:fadeUp 1.2s ease;
+
+    z-index:2;
+
+}
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.profile-img{
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:6px solid #00abf0;
+
+    box-shadow:
+    0 0 20px #00abf0,
+    0 0 45px rgba(0,171,240,.6);
+
+    transition:.5s;
+
+    animation:profileFloat 4s ease-in-out infinite;
+
+}
+
+.profile-img:hover{
+
+    transform:scale(1.08) rotate(3deg);
+
+    box-shadow:
+    0 0 35px #00abf0,
+    0 0 70px #00abf0;
+
+}
+
+@keyframes profileFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================================
+   NAME
+========================================= */
+
+#typing{
+
+    margin-top:30px;
+
+    font-size:58px;
+
+    font-weight:800;
+
+    color:#fff;
+
+    letter-spacing:1px;
+
+    line-height:1.2;
+
+}
+
+#typing::after{
+
+    content:"|";
+
+    color:#00abf0;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:0;
+    }
+
+}
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.hero-content p{
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    color:#d8d8d8;
+
+    line-height:1.8;
+
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:linear-gradient(45deg,#00abf0,#0078ff);
+
+    transition:.4s;
+
+    box-shadow:0 8px 20px rgba(0,171,240,.35);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-6px) scale(1.05);
+
+    box-shadow:0 0 30px #00abf0;
+
+}
+
+/* =========================================
+   HERO ANIMATION
+========================================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* =========================================
+   SECTION
+========================================= */
+
+section{
+    padding:90px 10%;
+    position:relative;
+}
+
+section h2{
+    text-align:center;
+    font-size:42px;
+    font-weight:700;
+    color:#00abf0;
+    margin-bottom:50px;
+    position:relative;
+}
+
+section h2::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:#00abf0;
+    display:block;
+    margin:15px auto 0;
+    border-radius:10px;
+    box-shadow:0 0 15px #00abf0;
+}
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+#about{
+    max-width:1100px;
+    margin:auto;
+}
+
+#about p{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    padding:35px;
+    font-size:18px;
+    line-height:1.9;
+    color:#d6d6d6;
+    text-align:center;
+    transition:.4s;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+#about p:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(0,171,240,.5);
+}
+
+/* =========================================
+   CARD CONTAINER
+========================================= */
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+/* =========================================
+   COMMON CARD
+========================================= */
+
+.card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    transition:.45s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+
+    left:-100%;
+
+    width:250%;
+
+    height:250%;
+
+    background:linear-gradient(
+        45deg,
+        transparent,
+        rgba(0,171,240,.18),
+        transparent
+    );
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+.card:hover::before{
+
+    top:-40%;
+
+    left:-40%;
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 0 30px rgba(0,171,240,.6);
+
+    border-color:#00abf0;
+
+}
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.card h3{
+
+    color:#00abf0;
+
+    font-size:25px;
+
+    margin-bottom:18px;
+
+    transition:.4s;
+
+}
+
+.card:hover h3{
+
+    color:#fff;
+
+}
+
+/* =========================================
+   CARD PARAGRAPH
+========================================= */
+
+.card p{
+
+    color:#d8d8d8;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+/* =========================================
+   SKILLS SECTION
+========================================= */
+
+#skills .card{
+
+    min-height:230px;
+
+}
+
+#skills .card:hover{
+
+    background:linear-gradient(
+        135deg,
+        rgba(0,171,240,.15),
+        rgba(255,255,255,.06)
+    );
+
+}
+
+/* =========================================
+   PROJECTS SECTION
+========================================= */
+
+#projects .card{
+
+    min-height:250px;
+
+}
+
+#projects .card:hover{
+
+    background:linear-gradient(
+        135deg,
+        rgba(0,255,180,.12),
+        rgba(255,255,255,.06)
+    );
+
+}
+
+/* =========================================
+   CARD ICON PLACEHOLDER
+========================================= */
+
+.card::after{
+
+    content:"★";
+
+    position:absolute;
+
+    top:18px;
+
+    right:22px;
+
+    color:#00abf0;
+
+    font-size:22px;
+
+    opacity:.25;
+
+    transition:.4s;
+
+}
+
+.card:hover::after{
+
+    transform:rotate(360deg);
+
+    opacity:1;
+
+}
+
+/* =========================================
+   SCROLL ANIMATION
+========================================= */
+
+.card{
+
+    animation:fadeCard .8s ease;
+
+}
+
+@keyframes fadeCard{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}/* ==========================================
+   CERTIFICATE SECTION
+========================================== */
+
+.certificate-box{
+    max-width:700px;
+    margin:auto;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+    padding:45px;
+    text-align:center;
+    transition:.5s;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.certificate-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(0,171,240,.6);
+}
+
+.certificate-box h3{
+    color:#00abf0;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.certificate-box p{
+    color:#d6d6d6;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+/* ==========================================
+   CONTACT SECTION
+========================================== */
+
+.contact-box{
+    max-width:750px;
+    margin:auto;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    transition:.5s;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.contact-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(0,171,240,.6);
+}
+
+.contact-box p{
+    font-size:18px;
+    color:#d6d6d6;
+    margin:18px 0;
+    transition:.4s;
+}
+
+.contact-box p:hover{
+    color:#00abf0;
+    letter-spacing:1px;
+}
+
+/* ==========================================
+   SOCIAL ICONS
+========================================== */
+
+.social-icons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.social-icons a{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:#fff;
+    font-size:24px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    transition:.4s;
+}
+
+.social-icons a:hover{
+    background:#00abf0;
+    transform:translateY(-8px) rotate(360deg);
+    box-shadow:0 0 25px #00abf0;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+    margin-top:80px;
+    background:#051129;
+    padding:30px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer p{
+    color:#bdbdbd;
+    font-size:16px;
+    letter-spacing:1px;
+}
+
+footer span{
+    color:#00abf0;
+    font-weight:600;
+}
+
+/* ==========================================
+   SCROLL TO TOP BUTTON
+========================================== */
+
+#topBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#00abf0;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+    display:none;
+    transition:.4s;
+    z-index:999;
+    box-shadow:0 0 20px rgba(0,171,240,.5);
+}
+
+#topBtn:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 30px #00abf0;
+}
+
+/* ==========================================
+   SECTION ANIMATION
+========================================== */
+
+section{
+    animation:fadeSection 1s ease;
+}
+
+@keyframes fadeSection{
+
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}/* ==========================================
+   CERTIFICATE SECTION
+========================================== */
+
+.certificate-box{
+    max-width:700px;
+    margin:auto;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+    padding:45px;
+    text-align:center;
+    transition:.5s;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.certificate-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(0,171,240,.6);
+}
+
+.certificate-box h3{
+    color:#00abf0;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.certificate-box p{
+    color:#d6d6d6;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+/* ==========================================
+   CONTACT SECTION
+========================================== */
+
+.contact-box{
+    max-width:750px;
+    margin:auto;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    transition:.5s;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.contact-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(0,171,240,.6);
+}
+
+.contact-box p{
+    font-size:18px;
+    color:#d6d6d6;
+    margin:18px 0;
+    transition:.4s;
+}
+
+.contact-box p:hover{
+    color:#00abf0;
+    letter-spacing:1px;
+}
+
+/* ==========================================
+   SOCIAL ICONS
+========================================== */
+
+.social-icons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.social-icons a{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:#fff;
+    font-size:24px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    transition:.4s;
+}
+
+.social-icons a:hover{
+    background:#00abf0;
+    transform:translateY(-8px) rotate(360deg);
+    box-shadow:0 0 25px #00abf0;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+    margin-top:80px;
+    background:#051129;
+    padding:30px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer p{
+    color:#bdbdbd;
+    font-size:16px;
+    letter-spacing:1px;
+}
+
+footer span{
+    color:#00abf0;
+    font-weight:600;
+}
+
+/* ==========================================
+   SCROLL TO TOP BUTTON
+========================================== */
+
+#topBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#00abf0;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+    display:none;
+    transition:.4s;
+    z-index:999;
+    box-shadow:0 0 20px rgba(0,171,240,.5);
+}
+
+#topBtn:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 30px #00abf0;
+}
+
+/* ==========================================
+   SECTION ANIMATION
+========================================== */
+
+section{
+    animation:fadeSection 1s ease;
+}
+
+@keyframes fadeSection{
+
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
