@@ -174,6 +174,19 @@
 
         <p>📍 Maharashtra, India</p>
 
+        <form id="contact-form">
+
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+    <input type="tel" id="mobile" name="mobile" placeholder="Your Mobile Number">
+
+    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+
+</form>
     </div>
 
 </section>
@@ -218,6 +231,40 @@ function typeWriter(){
 typeWriter();
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabaseUrl = "https://vvzeegglqpwlbnnfuyzu.supabase.co";
+const supabaseKey = "sb_publishable_tkCWj6g-yKvgrFKQ21hgDg_CgzvEx8H";
 
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const mobile = document.getElementById("mobile").value;
+    const message = document.getElementById("message").value;
+
+    const { error } = await supabase
+        .from("contacts")
+        .insert([
+            {
+                name: name,
+                email: email,
+                mobile: mobile,
+                message: message
+            }
+        ]);
+
+    if (error) {
+        alert("Error: " + error.message);
+    } else {
+        alert("Message Sent Successfully!");
+        document.getElementById("contact-form").reset();
+    }
+});
+</script>
 </body>
 </html>
