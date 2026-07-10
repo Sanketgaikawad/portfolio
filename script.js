@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ================= SUPABASE =================
 
     const supabaseUrl =
-        "https://wvzesgdlopwkbmiuryzu.supabase.co";
+        "https://vvzesgdlopwkbmiuryzu.supabase.co";
 
     const supabaseKey =
         "sb_publishable_tkCWj6g-yKvgrFKQ21hgDg_CgzvEx8H";
