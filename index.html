@@ -14,25 +14,25 @@
 <header>
     <div class="hero-content">
 
-    <img src="me3.png" alt="Sanket Gaikwad" class="profile-img">
+        <img src="me3.png" alt="Sanket Gaikwad" class="profile-img">
 
-    <h1 id="typing"></h1>
+        <h1 id="typing"></h1>
 
-    <p>Diploma IT Student | AI Enthusiast | Web Developer</p>
+        <p>Diploma IT Student | AI Enthusiast | Web Developer</p>
 
-    <div class="hero-buttons">
+        <div class="hero-buttons">
 
-        <a href="#certificate" class="btn">
-            📜 View My Certificate
-        </a>
+            <a href="#certificate" class="btn">
+                📜 View My Certificate
+            </a>
 
-        <a href="resume.docx" download class="btn">
-            📄 Download Resume
-        </a>
+            <a href="resume.docx" download class="btn">
+                📄 Download Resume
+            </a>
+
+        </div>
 
     </div>
-
-</div>
 </header>
 
 <!-- ================= ABOUT ================= -->
@@ -60,30 +60,22 @@
 
         <div class="card">
             <h3>HTML & CSS</h3>
-            <p>
-                Responsive, modern and attractive websites.
-            </p>
+            <p>Responsive, modern and attractive websites.</p>
         </div>
 
         <div class="card">
             <h3>JavaScript</h3>
-            <p>
-                Interactive and dynamic web applications.
-            </p>
+            <p>Interactive and dynamic web applications.</p>
         </div>
 
         <div class="card">
             <h3>Python</h3>
-            <p>
-                Programming, automation and AI applications.
-            </p>
+            <p>Programming, automation and AI applications.</p>
         </div>
 
         <div class="card">
             <h3>Artificial Intelligence</h3>
-            <p>
-                Machine Learning and AI-based projects.
-            </p>
+            <p>Machine Learning and AI-based projects.</p>
         </div>
 
     </div>
@@ -98,11 +90,8 @@
 
     <div class="card-container">
 
-       
-
         <div class="card">
             <h3>Portfolio Website</h3>
-
             <p>
                 Responsive personal portfolio using HTML, CSS and JavaScript.
             </p>
@@ -110,7 +99,6 @@
 
         <div class="card">
             <h3>Import Export Website</h3>
-
             <p>
                 Professional import-export website with login,
                 signup and backend integration.
@@ -119,7 +107,6 @@
 
         <div class="card">
             <h3>Hostel Management System</h3>
-
             <p>
                 Hostel management project using HTML, CSS,
                 JavaScript and PHP.
@@ -129,7 +116,6 @@
     </div>
 
 </section>
-
 <!-- ================= CERTIFICATE ================= -->
 
 <section id="certificate">
@@ -156,8 +142,6 @@
 
 </section>
 
-
-
 <!-- ================= CONTACT ================= -->
 
 <section id="contact">
@@ -176,17 +160,18 @@
 
         <form id="contact-form">
 
-    <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-    <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-    <input type="tel" id="mobile" name="mobile" placeholder="Your Mobile Number">
+            <input type="tel" id="mobile" name="mobile" placeholder="Your Mobile Number">
 
-    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
 
-    <button type="submit">Send Message</button>
+            <button type="submit">Send Message</button>
 
-</form>
+        </form>
+
     </div>
 
 </section>
@@ -195,75 +180,14 @@
 
 <footer>
 
-    <p>
-        © 2026 Sanket Gaikwad | All Rights Reserved
-    </p>
+    <p>© 2026 Sanket Gaikwad | All Rights Reserved</p>
 
 </footer>
 
-<!-- ================= TYPEWRITER SCRIPT ================= -->
+<!-- ================= SCRIPTS ================= -->
 
-<script>
-
-const text = "Hi, I'm Sanket Gaikwad";
-const typing = document.getElementById("typing");
-
-let i = 0;
-
-function typeWriter(){
-
-    if(i < text.length){
-
-        typing.innerHTML += text.charAt(i);
-
-        i++;
-
-        setTimeout(typeWriter,120);
-
-    }else{
-
-        typing.classList.add("blink");
-
-    }
-
-}
-
-typeWriter();
-
-</script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-const supabaseUrl = "https://wvzesgdlopwkbmiuryzu.supabase.co";
-const supabaseKey = "sb_publishable_tkCWj6g-yKvgrFKQ21hgDg_CgzvEx8H";
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+<script src="script.js"></script>
 
-document.getElementById("contact-form").addEventListener("submit", async function(e) {
-
-    e.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const mobile = document.getElementById("mobile").value;
-    const message = document.getElementById("message").value;
-
-    const { error } = await supabase
-        .from("contacts")
-        .insert([
-            {
-                name: name,
-                email: email,
-                mobile: mobile,
-                message: message
-            }
-        ]);
-
-    if (error) {
-        alert("Error: " + error.message);
-    } else {
-        alert("Message Sent Successfully!");
-        document.getElementById("contact-form").reset();
-    }
-});
-</script>
 </body>
 </html>
